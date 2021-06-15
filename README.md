@@ -10,7 +10,9 @@
 - cd into repository
 - `npm install`
 - `npm start`
-- navigate to localhost://8080
+- navigate your browser to:
+  - `localhost://8080/api/satellite/stats`
+  - `localhost://8080/api/satellite/health`
 
 # Background
 

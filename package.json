@@ -1,0 +1,22 @@
+{
+  "name": "satellite-monitor",
+  "version": "1.0.0",
+  "description": "Kevin Pitzer coding challenge submission",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevKodes/funnel-challenge.git"
+  },
+  "author": "Kevin Pitzer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevKodes/funnel-challenge/issues"
+  },
+  "homepage": "https://github.com/KevKodes/funnel-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

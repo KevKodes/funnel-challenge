@@ -6,6 +6,14 @@
 
 # How to Run
 
+- clone this repository
+- cd into repository
+- `npm install`
+- `npm start`
+- navigate your browser to:
+  - `localhost://8080/api/satellite/stats`
+  - `localhost://8080/api/satellite/health`
+
 # Background
 
 Funnel has launched a satellite in order to tackle the lucrative lunar real estate market. To make sure the satellite doesn’t come crashing back down, we’re creating a web application to monitor its status. Your job is to write a health API for it.

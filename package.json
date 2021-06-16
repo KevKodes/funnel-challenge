@@ -4,7 +4,7 @@
   "description": "Kevin Pitzer coding challenge submission",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "mocha",
     "start": "./bin/www"
   },
   "repository": {

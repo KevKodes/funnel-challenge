@@ -11,8 +11,8 @@
 - `npm install`
 - `npm start`
 - navigate your browser to:
-  - `localhost://8080/api/satellite/stats`
-  - `localhost://8080/api/satellite/health`
+  - `localhost:8080/api/satellite/stats`
+  - `localhost:8080/api/satellite/health`
 
 # Background
 

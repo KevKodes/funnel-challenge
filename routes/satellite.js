@@ -6,5 +6,8 @@ exports.health = function (req, res) {
 
 exports.stats = function (req, res) {
   const altStats = {};
-  res.send("here's the stats");
+  altStats.minimum = Math.min(...data);
+  altStats.maximum = Math.max(...data);
+  altStats.average = data.reduce((acc, cv) => acc + cv) / data.length;
+  res.send(altStats);
 };

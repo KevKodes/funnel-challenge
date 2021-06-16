@@ -47,3 +47,10 @@ Your application should read the real-time altitude data from nestio.space/api/s
 - Write unit tests for the health end-point.
 - Use any language/environment/dependencies you want to.
 - Please provide a README describing how to set up and run the application.
+
+# Technologies
+
+- Node.js
+- Express.js
+- Mocha testing framework
+- Node-fetch library

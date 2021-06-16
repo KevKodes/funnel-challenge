@@ -9,6 +9,5 @@ app.get("/api/satellite/stats", satelliteRouter.stats);
 app.get("/api/satellite/health", satelliteRouter.health);
 
 setInterval(getData, 10000);
-// getData();
 
 module.exports = app;

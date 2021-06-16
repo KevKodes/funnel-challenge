@@ -13,6 +13,8 @@
 - navigate your browser to:
   - `localhost:8080/api/satellite/stats`
   - `localhost:8080/api/satellite/health`
+- run tests with:
+  - `npm test`
 
 # Background
 

@@ -4,7 +4,7 @@
   "description": "Kevin Pitzer coding challenge submission",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "mocha",
     "start": "./bin/www"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/KevKodes/funnel-challenge#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mocha": "^9.0.0",
     "node-fetch": "^2.6.1"
   }
 }

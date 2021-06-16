@@ -4,7 +4,6 @@ let data = [];
 
 // format the data and save it to the data object
 const saveData = (rawData) => {
-  // const time = rawData.last_updated.split("T")[1];
   data.push(rawData.altitude);
   // only save the last 5 mintues
   if (data.length > 30) {
@@ -18,9 +17,7 @@ async function getData() {
     const reqURL = "http://nestio.space/api/satellite/data";
     const returned = await fetch(reqURL);
     const newData = await returned.json();
-    // console.log("new data: ", newData);
     saveData(newData);
-    console.log("updated total data: ", data);
     return newData;
   } catch (error) {
     console.error(error);

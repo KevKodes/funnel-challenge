@@ -5,5 +5,6 @@ exports.health = function (req, res) {
 };
 
 exports.stats = function (req, res) {
+  const altStats = {};
   res.send("here's the stats");
 };

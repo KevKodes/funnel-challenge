@@ -1,3 +1,3 @@
-healthCalcs = function (data) {};
+function healthCalcs(data) {}
 
-module.exports = { healthCalcs };
+module.exports = healthCalcs;

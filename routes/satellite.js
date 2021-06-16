@@ -2,8 +2,9 @@ const { data } = require("../utils/data");
 const { healthCalcs } = require("../utils/health");
 
 exports.health = function (req, res) {
-  const output = healthCalcs(data);
-  res.send(JSON.stringify(output));
+  // const output = healthCalcs(data);
+  // res.send(JSON.stringify(output));
+  res.send(data);
 };
 
 exports.stats = function (req, res) {

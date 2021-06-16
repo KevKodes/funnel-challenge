@@ -1,11 +1,15 @@
 const fetch = require("node-fetch");
 
-let data = {};
+let data = [];
 
 // format the data and save it to the data object
 const saveData = (rawData) => {
-  const time = rawData.last_updated.split("T")[1];
-  data[time] = rawData.altitude;
+  // const time = rawData.last_updated.split("T")[1];
+  data.push(rawData.altitude);
+  // only save the last 5 mintues
+  if (data.length > 30) {
+    data = data.slice(-30);
+  }
 };
 
 // fetch the data from the nestio url
@@ -14,7 +18,7 @@ async function getData() {
     const reqURL = "http://nestio.space/api/satellite/data";
     const returned = await fetch(reqURL);
     const newData = await returned.json();
-    console.log("new data: ", newData);
+    // console.log("new data: ", newData);
     saveData(newData);
     console.log("updated total data: ", data);
     return newData;
@@ -24,4 +28,4 @@ async function getData() {
   }
 }
 
-module.exports = getData;
+module.exports = { getData, data };

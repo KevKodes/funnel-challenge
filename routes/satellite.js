@@ -1,5 +1,7 @@
+const { data } = require("../utils/data");
+
 exports.health = function (req, res) {
-  res.send("check the health");
+  res.send({ health: data });
 };
 
 exports.stats = function (req, res) {

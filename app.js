@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const indexRouter = require("./routes/index");
 const satelliteRouter = require("./routes/satellite");
-const getData = require("./utils/data");
+const { getData } = require("./utils/data");
 
 app.use("/", indexRouter);
 app.get("/api/satellite/stats", satelliteRouter.stats);

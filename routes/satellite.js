@@ -10,8 +10,9 @@ exports.health = function (req, res) {
 
 exports.stats = function (req, res) {
   const altStats = {};
-  altStats.minimum = Math.min(...data);
-  altStats.maximum = Math.max(...data);
-  altStats.average = data.reduce((acc, cv) => acc + cv) / data.length;
+  altStats.minimum = Math.min(...data.slice(-30));
+  altStats.maximum = Math.max(...data.slice(-30));
+  // altStats.average = data.reduce((acc, cv) => acc + cv) / data.length;
+  altStats.average = avgAlt[avgAlt.length - 1];
   res.send(altStats);
 };

@@ -18,16 +18,16 @@ let avgAlt = [];
 // fetch the data from the nestio url
 async function getData() {
   try {
+    // fetch the real time data
     const reqURL = "http://nestio.space/api/satellite/data";
     const returned = await fetch(reqURL);
     const newData = await returned.json();
-    // saveData(newData);
+    // update the saved altitude history and running average
     data.push(newData.altitude);
-    // data = data.slice(-30);
     console.log("updated: ", data);
-    const currentAvg = data.reduce((acc, cv) => acc + cv) / data.length;
+    const currentAvg =
+      data.slice(-30).reduce((acc, cv) => acc + cv) / Math.min(30, data.length);
     avgAlt.push(currentAvg);
-    // avgAlt = avgAlt.slice(-12);
     return newData;
   } catch (error) {
     console.error(error);

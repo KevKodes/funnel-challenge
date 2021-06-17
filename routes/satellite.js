@@ -1,5 +1,5 @@
 const { data, avgAlt } = require("../utils/data");
-const { healthCalcs } = require("../utils/health");
+const healthCalcs = require("../utils/health");
 
 exports.health = function (req, res) {
   const output = healthCalcs(avgAlt);

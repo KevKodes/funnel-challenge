@@ -1,6 +1,6 @@
 // helper function to check if the sustained case is met
 function isSustained(arr) {
-  for (let i = 0; i < arr.length - 7; i++) {
+  for (let i = 0; i < arr.length - 6; i++) {
     if (arr[i] < 160 && Math.max(...arr.slice(i, i + 6)) < 160) {
       return true;
     }
@@ -16,11 +16,11 @@ function healthCalcs(avgAlt) {
     return "WARNING: RAPID ORBITAL DECAY IMMINENT";
   }
   // OK
-  else if (Math.min(...avgAlt.slice(-6)) >= 160) {
-    return "Altitude is A-OK";
-  }
+  // else if (Math.min(...avgAlt.slice(-6)) >= 160) {
+  //   return "Altitude is A-OK";
+  // }
   // Sustained
-  else if (isSustained(avgAlt)) {
+  else if (isSustained(avgAlt) && !(Math.min(...avgAlt.slice(-6)) >= 160)) {
     return "Sustained Low Earth Orbit Resumed";
   } else {
     return "Altitude is A-OK";

@@ -1,6 +1,7 @@
 const fetch = require("node-fetch");
 
 let data = [];
+let avgAlt = [];
 
 // format the data and save it to the data object
 const saveData = (rawData) => {
@@ -8,6 +9,12 @@ const saveData = (rawData) => {
   // only save the last 5 mintues
   if (data.length > 30) {
     data = data.slice(-30);
+  }
+  // calculate the average altitude
+  const currentAvg = data.reduce((acc, cv) => acc + cv) / data.length;
+  avgAlt.push(currentAvg);
+  if (avgAlt.length > 12) {
+    avgAlt = avgAlt.slice(-12);
   }
 };
 
@@ -25,4 +32,4 @@ async function getData() {
   }
 }
 
-module.exports = { getData, data };
+module.exports = { getData, data, avgAlt };

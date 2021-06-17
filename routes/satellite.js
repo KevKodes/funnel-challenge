@@ -4,6 +4,7 @@ const healthCalcs = require("../utils/health");
 exports.health = function (req, res) {
   const output = healthCalcs(avgAlt);
   console.log("running average altitude: ", avgAlt);
+  console.log("stored data: ", data);
   res.send(JSON.stringify(output));
 };
 

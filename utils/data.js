@@ -4,19 +4,16 @@ let data = [];
 let avgAlt = [];
 
 // format the data and save it to the data object
-const saveData = (rawData) => {
-  data.push(rawData.altitude);
-  // only save the last 5 mintues
-  if (data.length > 30) {
-    data = data.slice(-30);
-  }
-  // calculate the average altitude
-  const currentAvg = data.reduce((acc, cv) => acc + cv) / data.length;
-  avgAlt.push(currentAvg);
-  if (avgAlt.length > 12) {
-    avgAlt = avgAlt.slice(-12);
-  }
-};
+// const saveData = (rawData) => {
+//   data.push(rawData.altitude);
+//   data = data.slice(-30);
+//   console.log("updated: ", data);
+
+//   // calculate the average altitude
+//   const currentAvg = data.reduce((acc, cv) => acc + cv) / data.length;
+//   avgAlt.push(currentAvg);
+//   avgAlt = avgAlt.slice(-12);
+// };
 
 // fetch the data from the nestio url
 async function getData() {
@@ -24,7 +21,13 @@ async function getData() {
     const reqURL = "http://nestio.space/api/satellite/data";
     const returned = await fetch(reqURL);
     const newData = await returned.json();
-    saveData(newData);
+    // saveData(newData);
+    data.push(newData.altitude);
+    // data = data.slice(-30);
+    console.log("updated: ", data);
+    const currentAvg = data.reduce((acc, cv) => acc + cv) / data.length;
+    avgAlt.push(currentAvg);
+    // avgAlt = avgAlt.slice(-12);
     return newData;
   } catch (error) {
     console.error(error);

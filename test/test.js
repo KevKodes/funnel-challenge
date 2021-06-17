@@ -1,7 +1,7 @@
 const assert = require("assert");
 const healthCalcs = require("../utils/health");
 
-describe("Health Checks", function () {
+describe("Basic Health Checks", function () {
   it("should return the warning message when the altitude is low", function () {
     const fakeAvgAlt = [146, 134, 125, 120, 120, 125, 134, 138];
     const fakeAvgAlt2 = [
@@ -31,6 +31,15 @@ describe("Health Checks", function () {
     const fakeAvgAlt = [
       138, 137, 136, 145, 150, 155, 160, 161, 165, 170, 177, 175,
     ];
+    const actual = healthCalcs(fakeAvgAlt);
+    assert.equal(actual, expected);
+  });
+});
+
+describe("Edge Case Health Checks", function () {
+  it("should return the warning message when no data is found", function () {
+    const fakeAvgAlt = [];
+    const expected = "WARNING: RAPID ORBITAL DECAY IMMINENT";
     const actual = healthCalcs(fakeAvgAlt);
     assert.equal(actual, expected);
   });

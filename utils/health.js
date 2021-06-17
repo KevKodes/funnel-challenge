@@ -9,7 +9,6 @@ function isSustained(arr) {
 }
 
 // function to check the average altitude of the satellite
-// The passed in avgAlt will be an array of the averages for the last 2 minutes
 function healthCalcs(avgAlt) {
   if (Math.max(...avgAlt.slice(-6)) < 160) {
     return "WARNING: RAPID ORBITAL DECAY IMMINENT";
